@@ -209,7 +209,7 @@ sub {
     }
 }
 
-@media (max-width: 1018px) {
+@media (max-width: 1040px) {
     .header {
         width: 100%;
     }
@@ -484,14 +484,14 @@ sub {
 }
 
 .img-mm-first, .img-mm-last {
-    min-width: 240px;
+    width: min(500px, 60%);
     height: auto;
     border-radius: 10px;
     object-fit: cover;
 }
 
 .text-mm-first {
-    max-width: 1300px;
+    max-width: 1000px;
     padding-right: 20px;
 }
 
@@ -503,6 +503,7 @@ sub {
 
 .cnt-mm-first, .cnt-mm-last {
     margin: 0;
+    padding-top: 6px;
     text-align: justify;
     line-height: 1.6;
 }
@@ -766,7 +767,7 @@ sub {
         height: auto;
         font-size: .75rem;
     }
-
+ 
     .header #help {
         display: flex;
         justify-content: right;
