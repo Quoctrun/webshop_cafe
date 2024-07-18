@@ -437,6 +437,33 @@ sub {
     text-align: center;
 }
 
+.h-main-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.h-main-button button {
+    background-color: #f76c6c; 
+    color: white; 
+    border: none;
+    padding: 2% 5%; 
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 3vw;
+    margin: 10px 2px;
+    cursor: pointer; 
+    border-radius: 59px; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.h-main-button button:hover {
+    background-color: #ff4747;
+    transform: scale(1.05); 
+}
+
 /*MAIN--Main--*/
 .main-main {
     display: flex;
