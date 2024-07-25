@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Lấy giá trị bộ lọc từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterFromUrl = urlParams.get('filter');
+    
     // Xử lý sự kiện nhấp vào bộ lọc
     document.querySelectorAll('.filter-option').forEach(link => {
         link.addEventListener('click', (e) => {
@@ -15,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Hiển thị hoặc ẩn các sản phẩm dựa trên loại
             document.querySelectorAll('.product-item').forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                const category = item.getAttribute('data-category');
+
+                if (filter === 'all' || category === filter) {
+                    item.style.display = '';
+                } else if (filter === 'nuoc' && category !== 'banh') {
                     item.style.display = '';
                 } else {
                     item.style.display = 'none';
@@ -23,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Nếu có bộ lọc từ URL, kích hoạt nó
+    if (filterFromUrl) {
+        const filterLink = document.querySelector(`.filter-option[data-filter="${filterFromUrl}"]`);
+        if (filterLink) {
+            filterLink.click();
+        }
+    }
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', (e) => {
@@ -60,27 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const cartElement = document.querySelector('.cart-item');
         cartElement.innerHTML = '';
         let total = 0;
-
+    
         cart.forEach(item => {
             const cartItem = document.createElement('div');
             cartItem.className = 'cc-item';
             cartItem.innerHTML = `
             <div class="contain-citem">
                 <img src="${item.img}" alt="${item.name}">
-                <p>${item.name}<br>${item.price} x ${item.quantity}</p>
+                <p>${item.name}<br>${formatCurrency(parseCurrency(item.price))} x ${item.quantity}</p>
             </div>
             <button class="remove-from-cart" data-product-id="${item.id}"><i class='bx bxs-message-square-x'></i></button>
             `;
             cartElement.appendChild(cartItem);
-
+    
             // Cập nhật tổng tiền
-            total += parseFloat(item.price) * item.quantity;
+            total += parseCurrency(item.price) * item.quantity;
         });
-
+    
         // Cập nhật số lượng giỏ hàng và tổng tiền
         document.querySelector('.cart sub').textContent = cart.length;
-        document.querySelector('.cart-total').textContent = `Tổng tiền: ${total.toFixed(3)} VNĐ`;
-
+        document.querySelector('.cart-total').textContent = `Tổng tiền: ${formatCurrency(total)}`;
+    
         // Thêm sự kiện xóa sản phẩm khỏi giỏ hàng
         cartElement.querySelectorAll('.remove-from-cart').forEach(button => {
             button.addEventListener('click', (e) => {
@@ -88,6 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 removeFromCart(productId);
             });
         });
+    }
+    
+    // Hàm chuyển đổi giá từ chuỗi sang số thực
+    function parseCurrency(value) {
+        return parseFloat(value.replace(/\./g, '').replace('đ', ''));
+    }
+    
+    // Hàm định dạng số với dấu phân cách hàng nghìn
+    function formatCurrency(value) {
+        return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
     }
 
     function removeFromCart(productId) {
