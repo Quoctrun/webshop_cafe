@@ -19,8 +19,8 @@
                 <li>
                     <a class="nav-prd active" href="product.html">Sản phẩm</a>
                     <ul class="sub-menu">
-                        <li><a href="product_cafe">Nước</a></li>
-                        <li><a href="product_cake">Bánh</a></li>
+                        <li><a href="product.html?filter=nuoc" class="filter-link">Nước</a></li>
+                        <li><a href="product.html?filter=banh" class="filter-link">Bánh</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-sale" href="sale.html">Khuyến mãi</a></li>
@@ -32,7 +32,7 @@
             <button class="search-button" aria-label="Search Button"><i class='bx bx-search'></i></button>
         </div>
         <div class="cart">
-            <a href="#"><i class='bx bx-cart'></i><sub>0</sub></a>
+            <a href="#"><i id="bx" class='bx bx-cart'></i><sub>0</sub></a>
             <div class="cart-items">
                 <div class="cart-item"></div>
                 <div class="cart-summary">
@@ -53,6 +53,7 @@
         <div class="filter-products">
             <div class="filter-product">
                 <a class="filter-option active" data-filter="all" href="#">Tất cả</a>
+                <a class="filter-option" data-filter="nuoc" href="#">Nước</a>
                 <a class="filter-option" data-filter="caffee" href="#">Caffee</a>
                 <a class="filter-option" data-filter="tra" href="#">Trà</a>
                 <a class="filter-option" data-filter="banh" href="#">Bánh</a>
@@ -63,10 +64,10 @@
                 <ul class="row search-result-items">
                     <li class="product-item" data-category="caffee">
                         <img src="img/cfden.png" alt="Product 1">
-                        <h2>Caffee đen đá</h2>
+                        <h2>Caffee Đen Đá</h2>
                         <h3 class="price">20.000đ</h3>
                         <div class="add-cart">
-                            <button class="add-to-cart" data-product-id="1" data-product-name="Cafee đen đá" data-product-price="20.000đ" data-product-img="img/cfden.png">
+                            <button class="add-to-cart" data-product-id="1" data-product-name="Cafee Đen Đá" data-product-price="20.000đ" data-product-img="img/cfden.png">
                                 <i class='bx bx-cart-add'></i>
                                 <p>Đặt mua</p>
                             </button>
@@ -76,16 +77,250 @@
 
                     <li class="product-item" data-category="caffee">
                         <img src="img/cf-whiteSocola.png" alt="Product 2">
-                        <h2>Caffee Socola-trắng</h2>
+                        <h2>Caffee Socola-Trắng</h2>
                         <h3 class="price">25.000đ</h3>
                         <div class="add-cart">
-                            <button class="add-to-cart" data-product-id="2" data-product-name="Caffee Socola-trắng" data-product-price="20.000đ" data-product-img="img/cf-whiteSocola.png">
+                            <button class="add-to-cart" data-product-id="2" data-product-name="Caffee Socola-Trắng" data-product-price="25.000đ" data-product-img="img/cf-whiteSocola.png">
                                 <i class='bx bx-cart-add'></i>
                                 <p>Đặt mua</p>
                             </button>
                             <input type="number" value="1" min="1" class="product-quantity" data-product-id="2">
                         </div>
                     </li>  
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Cappuccino.png" alt="Product 3">
+                        <h2>Cappuccino</h2>
+                        <h3 class="price">30.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="3" data-product-name="Cappuccino" data-product-price="30.000đ" data-product-img="img/Cappuccino.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="3">
+                        </div>
+                    </li>  
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Cold Brew Cam Úc.png" alt="Product 4">
+                        <h2>Cold Brew Cam Úc</h2>
+                        <h3 class="price">50.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="4" data-product-name="Cold Brew Cam Úc" data-product-price="50.000đ" data-product-img="img/Cold Brew Cam Úc.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="4">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Cold Brew Sữa Hạnh Nhân.png" alt="Product 5">
+                        <h2>Cold Brew Hạnh Nhân</h2>
+                        <h3 class="price">50.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="5" data-product-name="Cold Brew Hạnh Nhân" data-product-price="50.000đ" data-product-img="img/Cold Brew Sữa Hạnh Nhân.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="5">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Cold Brew Dâu Tây.png" alt="Product 6">
+                        <h2>Cold Brew Dâu Tây</h2>
+                        <h3 class="price">70.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="6" data-product-name="Cold Brew Dâu Tây" data-product-price="70.000đ" data-product-img="img/Cold Brew Dâu Tây.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="6">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Cold Brew Macchiato.png" alt="Product 7">
+                        <h2>Cold Brew Macchiato</h2>
+                        <h3 class="price">70.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="7" data-product-name="Cold Brew Macchiato" data-product-price="70.000đ" data-product-img="img/Cold Brew Macchiato.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="7">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Coffee Jelly.png" alt="Product 8">
+                        <h2>Coffee Jelly</h2>
+                        <h3 class="price">50.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="8" data-product-name="Coffee Jelly" data-product-price="50.000đ" data-product-img="img/Coffee Jelly.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="8">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Dalgona Coffee.png" alt="Product 9">
+                        <h2>Dalgona Coffee</h2>
+                        <h3 class="price">65.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="9" data-product-name="Dalgona Coffee" data-product-price="65.000đ" data-product-img="img/Dalgona Coffee.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="9">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="caffee">
+                        <img src="img/Boozy Whipped Coffee.png" alt="Product 10">
+                        <h2>Boozy Whipped Coffee</h2>
+                        <h3 class="price">65.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="10" data-product-name="Boozy Whipped Coffee" data-product-price="65.000đ" data-product-img="img/Boozy Whipped Coffee.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="10">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="tra">
+                        <img src="img/Matcha Espresso.png" alt="Product 11">
+                        <h2>Matcha Espresso</h2>
+                        <h3 class="price">70.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="11" data-product-name="Matcha Espresso" data-product-price="70.000đ" data-product-img="img/Matcha Espresso.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="11">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="tra">
+                        <img src="img/Trà Đá Mận (Maesil).png" alt="Product 12">
+                        <h2>Trà Đá Mận (Maesil)</h2>
+                        <h3 class="price">70.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="12" data-product-name="Trà Đá Mận (Maesil)" data-product-price="70.000đ" data-product-img="img/Trà Đá Mận (Maesil).png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="12">
+                        </div>
+                    </li> 
+
+                    <li class="product-item" data-category="tra">
+                        <img src="img/Trà Hoa Oải Hương.png" alt="Product 13">
+                        <h2>Trà Hoa Oải Hương</h2>
+                        <h3 class="price">50.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="13" data-product-name="Trà Hoa Oải Hương" data-product-price="50.000đ" data-product-img="img/Trà Hoa Oải Hương.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="13">
+                        </div>
+                    </li>
+
+                    <li class="product-item" data-category="tra">
+                        <img src="img/Trà Chanh Giây.png" alt="Product 14">
+                        <h2>Trà Chanh Giây</h2>
+                        <h3 class="price">30.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="14" data-product-name="Trà Chanh Giây" data-product-price="30.000đ" data-product-img="img/Trà Chanh Giây.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="14">
+                        </div>
+                    </li>
+
+                    <li class="product-item" data-category="tra">
+                        <img src="img/Trà Earl Grey.png" alt="Product 15">
+                        <h2>Trà Earl Grey</h2>
+                        <h3 class="price">45.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="15" data-product-name="Trà Earl Grey" data-product-price="45.000đ" data-product-img="img/Trà Earl Grey.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="15">
+                        </div>
+                    </li>
+
+                    <li class="product-item" data-category="banh">
+                        <img src="img/Chocolate Mousse.png" alt="Product 16">
+                        <h2>Chocolate Mousse</h2>
+                        <h3 class="price">75.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="16" data-product-name="Chocolate Mousse" data-product-price="75.000đ" data-product-img="img/Chocolate Mousse.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="16">
+                        </div>
+                    </li>
+
+                    <li class="product-item" data-category="banh">
+                        <img src="img/Croissant Kem Dâu.png" alt="Product 17">
+                        <h2>Croissant Kem Dâu</h2>
+                        <h3 class="price">80.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="17" data-product-name="Croissant Kem Dâu" data-product-price="80.000đ" data-product-img="img/Croissant Kem Dâu.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="17">
+                        </div>
+                    </li>
+
+                    <li class="product-item" data-category="banh">
+                        <img src="img/Matcha Tiramisu.png" alt="Product 18">
+                        <h2>Matcha Tiramisu</h2>
+                        <h3 class="price">50.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="18" data-product-name="Matcha Tiramisu" data-product-price="50.000đ" data-product-img="img/Matcha Tiramisu.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="18">
+                        </div>
+                    </li>
+
+                    <li class="product-item" data-category="banh">
+                        <img src="img/Rose Panna Cotta.png" alt="Product 19">
+                        <h2>Rose Panna Cotta</h2>
+                        <h3 class="price">50.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="19" data-product-name="Rose Panna Cotta" data-product-price="50.000đ" data-product-img="img/Rose Panna Cotta.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="19">
+                        </div>
+                    </li>
+
+                    <li class="product-item" data-category="banh">
+                        <img src="img/Vanilla Dream Crepes.png" alt="Product 20">
+                        <h2>Vanilla Dream Crepes</h2>
+                        <h3 class="price">85.000đ</h3>
+                        <div class="add-cart">
+                            <button class="add-to-cart" data-product-id="20" data-product-name="Vanilla Dream Crepes" data-product-price="85.000đ" data-product-img="img/Vanilla Dream Crepes.png">
+                                <i class='bx bx-cart-add'></i>
+                                <p>Đặt mua</p>
+                            </button>
+                            <input type="number" value="1" min="1" class="product-quantity" data-product-id="20">
+                        </div>
+                    </li>
                 </ul>
             </section>
         </div>
