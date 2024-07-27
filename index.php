@@ -15,15 +15,15 @@
         <div class="mobile"><a href="#" id="bar" aria-label="Open Navigation Menu"><i class='bx bx-menu'></i></a></div>
         <nav id="navbar" role="navigation">
             <ul>
-                <li><a class="nav-index active" href="index.html">Trang chủ</a></li>
+                <li><a class="nav-index active" href="index.php">Trang chủ</a></li>
                 <li>
-                    <a class="nav-prd" href="product.html">Sản phẩm</a>
+                    <a class="nav-prd" href="product.php">Sản phẩm</a>
                     <ul class="sub-menu">
-                        <li><a href="product.html?filter=nuoc" class="filter-link">Nước</a></li>
-                        <li><a href="product.html?filter=banh" class="filter-link">Bánh</a></li>
+                        <li><a href="product.php?filter=nuoc" class="filter-link">Nước</a></li>
+                        <li><a href="product.php?filter=banh" class="filter-link">Bánh</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-sale" href="sale.html">Khuyến mãi</a></li>
+                <li><a class="nav-sale" href="sale.php">Khuyến mãi</a></li>
                 <a href="#" id="close" aria-label="Close Navigation Menu"><i class='bx bx-x'></i></a>
             </ul>
         </nav>        
@@ -37,7 +37,7 @@
                 <div class="cart-item"></div>
                 <div class="cart-summary">
                     <div class="cart-total">Tổng tiền: 0 VNĐ</div>
-                    <a href="checkout.html" class="checkout-button" id="bx">Thanh toán</a>
+                    <a href="checkout.php" class="checkout-button" id="bx">Thanh toán</a>
                 </div>                
             </div>
         </div>
@@ -52,7 +52,7 @@
                         </div>                
                     </div>
                 </li>
-                <li><a class="user" href="sign_up.html"><i class='bx bx-user'></i></a></li>
+                <li><a class="user" href="sign_up.php"><i class='bx bx-user'></i></a></li>
             </ul>
         </div>
     </header>
@@ -73,7 +73,7 @@
                     <div class="contain-main-header">
                         <h2>được chúng tôi đặt lên hàng đầu</h2>
                     </div> 
-                    <a class="h-main-button" href="product.html"><button>SHOPING NOW</button></a>                  
+                    <a class="h-main-button" href="product.php"><button>SHOPING NOW</button></a>                  
                 </div>
             </div>
         </section>
