@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*--Css Header--*/
+li {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 200px;
+}
+
+.navbar-index {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.header .navbar-index .logo {
+    height: 3.5rem; 
+    width: 3.5rem;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.header .navbar-index .logo:hover {
+    box-shadow: 0 0 10px 2px grey;
+    height: 4rem;
+    width: 4rem;
+}
+
+.header .navbar-index #Title {
+    margin-left: 20px;
+    font-size: 2.5rem;
+}
+
+.header #help {
+    margin-left: auto;
+    font-size: 1rem;
+}
+
+/*--Css Main--*/
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+form {
+    display: block;
+    margin-top: 0rem;
+    unicode-bidi: isolate;
+}
+
+.form-main {
+    background-image: url(../img/logo.png); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: left;
+    margin: 0 200px 0 200px;
+    min-height: 600px;
+    max-width: 1300px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+}
+
+.element {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ft-main {
+    width: 400px;
+    background-color: aliceblue;
+    border-radius: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px 0 rgb(202, 198, 191);
+}
+
+.Title-form {
+    box-sizing: border-box;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-form {
+    padding: 1.375rem 30px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.Tl-form {
+    font-size: 1.25rem;
+    max-width: 8.5rem;
+    flex-shrink: 0;
+}
+
+.form-sign-up {
+    overflow: hidden;
+    padding: 0 30px 30px;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.id-ac, .password {
+    border: 1px solid rgb(53, 51, 51);
+    border-radius: 2px;
+    box-shadow: inset 0 2px 0 black;
+    box-sizing: border-box;
+    height: 2.5rem;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.input-id, .input-password {
+    border: 0;
+    filter: none;
+    flex: 1;
+    flex-shrink: 0;
+    outline: none;
+    padding: .75rem;
+}
+
+input, .input2 {
+    line-height: normal;
+}
+
+input, button {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.id-error, .password-error {
+    color: rgb(69, 74, 77);
+    font-size: .75rem;
+    margin: 0;
+    min-height: 1rem;
+    padding: .25rem 0 0;
+}
+
+.reset-pass {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reset {
+    font-size: .75rem;
+    color: blue;
+}
+
+.reset-pass >a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.creat:disabled {
+    cursor: not-allowed;
+    opacity: .7;
+}
+
+.creat {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: black;
+    box-shadow: rgb(69, 74, 77);
+    color: white;
+    text-transform: uppercase;
+    height: 2.5rem;
+    min-width: 8.75rem;
+}
+
+.creat:hover {
+    background-color: rgb(69, 74, 77);
+}
+
+.line-or {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.p__MPF {
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+}
+
+.MPD {
+    color: #ccc;
+    font-size: .75rem;
+    padding: 0 16px;
+    text-transform: uppercase;
+}
+
+.footer-form {
+    margin-bottom: 30px;
+}
+
+.have-ac {
+    font-size: .875rem;
+    color: rgba(0, 0, 0, .26);
+    padding-right: 4px;
+    white-space: pre;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-signup {
+    color: red;
+    font-size: .9rem;
+}
+
+/*--Css Footer--*/
+.footer {
+    margin-top: 100px;
+    background-color: black;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inf-cfshop {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.ft-adress {
+    display: block;
+    margin-right: auto;
+    padding: 50px 100px;
+}
+
+.ad-map {
+    display: flex;
+    padding: 0 0 20px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-tl, .hl-ft, .ft-email-inf-tl {
+    padding-right: 10px;
+}
+
+.if-hotline {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ft-dr-ite {
+    display: block;
+    margin: 50px 100px auto auto;
+}
+
+.ft-email-inf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.ft-email-inf .ft-email-inf-ct a {
+    color: white;
+}
+
+.ft-email-inf .ft-email-inf-ct > a:hover {
+    color: wheat;
+}
+
+.ft-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ft-icon > a {
+    color: white;
+    font-size: 2rem;
+    padding-right: 20px;
+}
+
+.ft-icon > a:hover {
+    color: wheat;
+}
+
+/*--Setting media--*/
+@media (max-width: 1092px) {
+    .header {
+        padding: 15px 100px;
+    }
+
+    .form-main {
+        height: 1100px;
+        margin: auto auto;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-size: 650px;
+        justify-content: baseline;
+        align-items: baseline;
+    }
+
+    .element {
+        margin-top: 100px;
+        justify-content:center;
+    }
+}
+
+@media (max-width: 888px) {
+    .inf-cfshop {
+        display: block;
+    }
+
+    .ad-map {
+        justify-content: start;
+    }
+
+    .ft-dr-ite {
+        padding: 0 100px;
+        margin: 0;
+    }
+
+    .ft-email-inf {
+        justify-content: start;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        display: block;
+        padding: 15px 0%;
+    }
+
+    .navbar-index{
+        justify-content: center;
+    }
+
+    .header #help {
+        display: flex;
+        justify-content: right;
+        margin-right: 15px;
+    }
+
+    .ft-adress {
+        padding: 50px 15px;
+    }
+    .ft-dr-ite {
+        padding: 0px 15px;
+    }
+}
+
+@media (max-width: 476px) {
+    .form-main {
+        background-size: 500px;
+        height: 940px;
+    }
+
+    .element {
+        margin-top: 70px;
+    }
+}
