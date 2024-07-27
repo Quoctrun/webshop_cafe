@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             message.read = true;
             localStorage.setItem('messages', JSON.stringify(messages));
             updateNotifications();
-            window.location.href = `notification-detail.html?id=${notificationId}`;
+            window.location.href = `notification-detail.php?id=${notificationId}`;
         }
     }
 

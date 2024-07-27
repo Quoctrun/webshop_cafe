@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caffe Monster</title>
     <link rel="icon" type="image" href="img/logo-tap.png">
-    <link rel="stylesheet" href="css/StyleSignIn.css">
+    <link rel="stylesheet" href="css/StyleSignUp_continue.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header class="header">
         <div class="navbar-index">
-            <a href="index.html"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
-            <h1 id="Title">Đăng nhập</h1>
+            <a href="index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
+            <h1 id="Title">Đăng ký</h1>
         </div>
         <p id="help">Hotline: 0354464053</p>
     </header>
@@ -25,17 +25,17 @@
                         <div class="ft-main">
                             <div class="Title-form">
                                 <div class="header-form">
-                                    <div class="Tl-form">Đăng nhập</div>
+                                    <div class="Tl-form">Đăng ký</div>
                                 </div>
                             </div>
                             <div class="form-sign-up">
                                 <form>
                                     <div class="input">
-                                        <div class="id-ac">
-                                            <input class="input-id" type="text" placeholder="Email/Số điện thoại/Tên đăng nhập" autocomplete="tel" name="id" aria-invalid="false">
+                                        <div class="name-ac">
+                                            <input class="input-name" type="text" placeholder="Tên tài khoản" autocomplete="tel" name="name" aria-invalid="false">
                                         </div>
                                     </div>
-                                    <div id="id-error" aria-live="polite"></div>
+                                    <div id="name-error" aria-live="polite"></div>
                                     <div class="line-or">
                                         <div class="p__MPF"></div>
                                         <span class="MPD">###</span>
@@ -47,12 +47,11 @@
                                         </div>
                                         <div id="password-error" aria-live="polite"></div>
                                     </div>
-                                    <div class="reset-pass"><a class="reset" href="#">Quên mật khẩu</a></div>
-                                    <button class="creat" type="submit">Đăng nhập</button>
+                                    <button class="creat" type="submit">Xác nhận</button>
                                 </form>
                             </div>
                             <div class="footer-form">
-                                <div class="have-ac">Bạn chưa có tài khoản? <a class="nav-signup" href="sign_up.html">Đăng ký</a></div>
+                                <div class="have-ac">Bạn đã có tài khoản? <a class="nav-signin" href="sign_in.php">Đăng nhập</a></div>
                             </div>
                         </div>
                     </div>

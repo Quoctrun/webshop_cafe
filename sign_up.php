@@ -11,7 +11,7 @@
 <body>
     <header class="header">
         <div class="navbar-index">
-            <a href="index.html"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
+            <a href="index.php"><img src="img/logo.png" class="logo" alt="Logo Caffe Monster"></a>
             <h1 id="Title">Đăng ký</h1>
         </div>
         <p id="help">Hotline: 0354464053</p>
@@ -51,7 +51,7 @@
                                 </form>
                             </div>
                             <div class="footer-form">
-                                <div class="have-ac">Bạn đã có tài khoản? <a class="nav-signin" href="sign_in.html">Đăng nhập</a></div>
+                                <div class="have-ac">Bạn đã có tài khoản? <a class="nav-signin" href="sign_in.php">Đăng nhập</a></div>
                             </div>
                         </div>
                     </div>

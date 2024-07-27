@@ -73,7 +73,7 @@
 
             // Xử lý nút quay lại
             const backButton = document.getElementById('back-button');
-            const returnPage = sessionStorage.getItem('returnPage') || 'index.html'; // Mặc định quay về index.html nếu không có returnPage
+            const returnPage = sessionStorage.getItem('returnPage') || 'index.php'; // Mặc định quay về index.php nếu không có returnPage
             const scrollTop = sessionStorage.getItem('scrollTop') || 0; // Mặc định về vị trí cuộn 0 nếu không có scrollTop
 
             backButton.href = returnPage; // Đặt href của nút quay lại
