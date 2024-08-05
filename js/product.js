@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let filteredItems = [];
 
     // Lấy giá trị bộ lọc từ URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,17 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = e.currentTarget.getAttribute('data-filter');
 
             // Hiển thị hoặc ẩn các sản phẩm dựa trên loại
-            document.querySelectorAll('.product-item').forEach(item => {
+            filteredItems = [...document.querySelectorAll('.product-item')].filter(item => {
                 const category = item.getAttribute('data-category');
-
-                if (filter === 'all' || category === filter) {
-                    item.style.display = '';
-                } else if (filter === 'nuoc' && category !== 'banh') {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
+                if (filter === 'all') return true;
+                if (filter === 'nuoc' && category !== 'banh') return true;
+                return category === filter;
             });
+
+            totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+            currentPage = 1;
+            showPage(currentPage);
         });
     });
 
@@ -125,4 +125,35 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartDisplay();
     }
+    
+    const itemsPerPage = 10;
+    const productItems = document.querySelectorAll(".product-item");
+    let currentPage = 1;
+    let totalPages = Math.ceil(productItems.length / itemsPerPage);
+
+    function showPage(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        productItems.forEach(item => item.style.display = 'none');
+        filteredItems.slice(start, end).forEach(item => item.style.display = 'block');
+
+        updatePageNumbers();
+    }
+
+    function updatePageNumbers() {
+        const pageNumbers = document.querySelector(".page-numbers");
+        pageNumbers.innerHTML = `Page ${currentPage} of ${totalPages}`;
+    }
+
+    window.changePage = function(delta) {
+        currentPage += delta;
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+        showPage(currentPage);
+    };
+
+    // Khởi tạo trang hiển thị
+    filteredItems = [...productItems];
+    showPage(currentPage);
 });

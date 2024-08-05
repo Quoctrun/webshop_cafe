@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffe Monster</title>
+    <link rel="icon" type="image" href="img/logo-tap.png">
+    <link rel="stylesheet" type="text/css" href="css/checkout.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--header section-->
+    <header class="header">
+        <a href="#"><img src="img/logo.png" class="logo" alt="Caffe Monster Logo"></a>
+        <div class="mobile"><a href="#" id="bar" aria-label="Open Navigation Menu"><i class='bx bx-menu'></i></a></div>
+        <nav id="navbar" role="navigation">
+            <ul>
+                <li><a class="nav-index" href="index.html">Trang chủ</a></li>
+                <li>
+                    <a class="nav-prd" href="product.html">Sản phẩm</a>
+                    <ul class="sub-menu">
+                        <li><a href="product.html?filter=nuoc" class="filter-link">Nước</a></li>
+                        <li><a href="product.html?filter=banh" class="filter-link">Bánh</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-sale" href="sale.html">Khuyến mãi</a></li>
+                <a href="#" id="close" aria-label="Close Navigation Menu"><i class='bx bx-x'></i></a>
+            </ul>
+        </nav>        
+        <form class="search-container">
+            <input type="search" class="search-input" placeholder="Tìm kiếm..." aria-label="Search">
+            <button class="search-button" aria-label="Search Button"><i class='bx bx-search'></i></button>
+        </form>
+        <div class="cart">
+            <a href="#"><i id="bx" class='bx bx-cart'></i><sub>0</sub></a>
+            <div class="cart-items">
+                <div class="cart-item"></div>
+                <div class="cart-summary">
+                    <div class="cart-total">Tổng tiền: 0 <u>đ</u></div>
+                    <a href="checkout.html" class="checkout-button">Thanh toán</a>
+                </div>                
+            </div>
+        </div>
+        <div id="icon-group">
+            <ul>
+                <li>
+                    <a class="noice" href="#"><i class='bx bxs-envelope'></i><sub>0</sub></a>
+                    <div class="envelope-items">
+                        <div class="envelope-item">
+                            
+                        </div>
+                        <div class="envelope-summary">
+                            <a href="#" class="checkread-button" id="bx">Đọc tất cả</a>
+                        </div>                
+                    </div>
+                </li>
+                <li>
+                    <a class="user" href="#"><i class='bx bx-user'></i></a>
+                    <ul class="sub2-menu">
+                        <li><a href="sign_up.html">Đăng ký</a></li>
+                        <li><a href="sign_in.html">Đăng nhập</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--main section-->
+    <main class="main">
+        <div class="page-heading">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="product.html">Sản phẩm</a></li> /
+                    <li>Giỏ hàng</li> /
+                    <li id="page-active">Đơn hàng</li>
+                </ul>
+                <div id="date-send" style="padding-top: 10px; color: #a5a2a2; font-size: 12px;"></div>
+                <hr>
+            </div>
+        </div>
+        <form class="detail-container">
+            <h1 id="detail-title">Chi tiết Đơn hàng</h1>
+            <div style="display: flex; width: 100%; align-items: center; justify-content: center; padding-bottom: 5px;">
+                <div class="line-tt-pg"></div>
+                <img class="img-tt-pg" src="img/logo.png">
+                <div class="line-tt-pg"></div>
+            </div>
+            <div id="contents">
+                <b style="margin-left: 5px;">Sản phẩm đặt mua:</b>
+                <div class="detail-products"></div>
+            </div>
+            <div class="inf-cus-order">
+                <b>Thông tin người nhận hàng:*</b>
+                <div class="detail-inf-cus-order">
+                    <input class="input-name" type="text" placeholder="Tên người nhận" autocomplete="tel" name="name" aria-invalid="false">
+                    <input class="input-phone" type="text" placeholder="Số điện thoại" autocomplete="tel" name="phone" aria-invalid="false">
+                </div>
+            </div>
+            <div class="delivery-method">
+                <fieldset style="padding: 10px 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <legend style="margin: 0 20px;">
+                        <b>Phương thức giao hàng:*</b>
+                    </legend>
+                    <div>
+                        <input type="radio" id="standard" name="delivery" value="standard">
+                        <label for="standard">Đến nhận tại cửa hàng</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="express" name="delivery" value="express" disabled>
+                        <label for="express" style="color:#a5a2a2;">Giao hàng tận nơi</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="sale-method" style="gap: 10px; display: flex; flex-direction: column;">
+                <b>Mã khuyến mãi:</b>
+                <div>
+                    <input type="text" id="promo-code" name="promo-code" placeholder="Nhập mã khuyến mãi">
+                    <button type="button" id="apply-promo">Áp dụng</button>
+                </div>
+                <div id="noice-sale-method"></div>
+            </div>
+            <div id="money-total">
+                <b>Tổng tiền: </b>
+                <p id="total-mn"></p>
+            </div>
+            <a href="#" id="yes-button" class="yes-button">Đặt hàng</a>
+        </form>
+    </main>
+    <!--footer section-->
+    <footer class="footer">
+        <div class="inf-cfshop">
+            <div class="ft-adress">
+                <div class="ad-map">
+                    <div class="ad-tl" style="min-width: 80px; margin-top: 0; margin-bottom: auto;"><b>Địa chỉ:</b></div>
+                    <div class="ad-ct">70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh</div>
+                </div>
+                <div class="map-ft" style="padding-bottom: 20px;"><a href="https://maps.app.goo.gl/jsNYvsDtjdViF1XcA" target="_blank" style="color: wheat;">Xem bản đồ</a></div>
+                <div class="if-hotline">
+                    <div class="hl-ft"><b>Hotline:</b></div>
+                    <div class="nb-hl">0354464053</div>
+                </div>
+            </div>
+            <div class="ft-dr-ite">
+                <div class="ft-email-inf">
+                    <div class="ft-email-inf-tl"><b>Email: </b></div>
+                    <div class="ft-email-inf-ct"><a href="mailto:dcao9049@gmail.com" target="_blank">dcao9049@gmail.com</a></div>
+                </div>
+                <div class="ft-icon">
+                    <a href="https://www.facebook.com/profile.php?id=100070397753672&mibextid=ZbWKwL" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.instagram.com/trunganhlt?igsh=MWR4azFjcWMzZ2g2dg==" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="https://www.tiktok.com/@quc.trung7365?_t=8nzILavzXsI&_r=1" target="_blank"><i class='bx bxl-tiktok'></i></a>
+                </div>
+                <div class="my-group" style="width: 100%;">
+                    <fieldset>
+                        <legend style="color: greenyellow;">Group members</legend>
+                        <p>2251120204__Cao Tiến Đạt</p>
+                        <p>2251120255__Lương Quốc Trung</p>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="footer-end"><b>@2024 Coffee Monster | All rights reserved</b></div>
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

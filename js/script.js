@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             message.read = true;
             localStorage.setItem('messages', JSON.stringify(messages));
             updateNotifications();
-            window.location.href = `notification-detail.php?id=${notificationId}`;
+            window.location.href = `notification-detail.html?id=${notificationId}`;
         }
     }
 
@@ -177,4 +177,112 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     updateNotifications();
+
+    function updateCheckoutForm() {
+        const checkoutForm = document.querySelector('.detail-products');
+        checkoutForm.innerHTML = '';
+    
+        cart.forEach(item => {
+            const formItem = document.createElement('div');
+            formItem.className = 'checkout-item';
+            formItem.innerHTML = `
+                <div class="detail-citem">
+                    <img src="${item.img}" alt="${item.name}">
+                    <p>${item.name}<br>${formatCurrency(parseCurrency(item.price))} x ${item.quantity}</p>
+                </div>
+            `;
+            checkoutForm.appendChild(formItem);
+        });
+    
+        const totalAmount = cart.reduce((total, item) => total + parseCurrency(item.price) * item.quantity, 0);
+        document.getElementById('total-mn').textContent = formatCurrency(totalAmount);
+    
+        function parseCurrency(value) {
+            return parseFloat(value.replace(/\./g, '').replace('đ', ''));
+        }
+    
+        function formatCurrency(value) {
+            return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        }
+    }
+    
+    if (document.querySelector('.detail-products')) {
+        updateCheckoutForm();
+    }   
+    
+    const applyPromoButton = document.getElementById('apply-promo');
+    const totalElement = document.getElementById('total-mn');
+    const noiceSaleMethod = document.getElementById('noice-sale-method');
+    let originalTotalAmount = parseCurrency(totalElement.textContent);
+
+    applyPromoButton.addEventListener('click', () => {
+        const promoCode = document.getElementById('promo-code').value;
+        applyPromoCode(promoCode);
+    });
+
+    function applyPromoCode(code) {
+        let totalAmount = originalTotalAmount; // Use the original total amount
+
+        const { discountPercent, maxDiscount, minOrderAmount } = getDiscountAmount(code);
+
+        if (totalAmount < minOrderAmount) {
+            noiceSaleMethod.innerHTML = '<p>Đơn hàng của bạn không đủ điều kiện để áp dụng mã khuyến mãi.</p>';
+            totalElement.textContent = formatCurrency(originalTotalAmount); // Reset total amount to original
+            return;
+        }
+
+        let discount = totalAmount * (discountPercent / 100);
+        if (discount > maxDiscount) {
+            discount = maxDiscount;
+        }
+
+        if (discount > 0) {
+            totalAmount -= discount;
+            totalElement.textContent = formatCurrency(totalAmount);
+            noiceSaleMethod.innerHTML = `<p>Mã khuyến mãi đã được áp dụng. Bạn đã được giảm ${formatCurrency(discount)}.</p>`;
+        } else {
+            noiceSaleMethod.innerHTML = '<p>Mã khuyến mãi không hợp lệ.</p>';
+            totalElement.textContent = formatCurrency(originalTotalAmount); // Reset total amount to original
+        }
+    }
+
+    function parseCurrency(value) {
+        return parseFloat(value.replace(/\./g, '').replace('đ', ''));
+    }
+
+    function formatCurrency(value) {
+        return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+    }
+
+    function getDiscountAmount(code) {
+        const validCodes = {
+            'SUMMER2024': { discountPercent: 10, maxDiscount: 100000, minOrderAmount: 500000 }, // Example values
+            'WELCOME': { discountPercent: 15, maxDiscount: 15000, minOrderAmount: 30000 }
+        };
+        return validCodes[code] || { discountPercent: 0, maxDiscount: 0, minOrderAmount: Infinity };
+    }
+
+    function resetTotalAmount() {
+        const promoCode = document.getElementById('promo-code').value;
+        if (!promoCode) {
+            totalElement.textContent = formatCurrency(originalTotalAmount);
+            noiceSaleMethod.innerHTML = ''; // Clear the message
+        }
+    }
+
+    document.getElementById('promo-code').addEventListener('input', resetTotalAmount);
+
+    const dateSendElement = document.getElementById('date-send');
+    if (dateSendElement) {
+        const currentDate = new Date();
+        const formattedDate = formatDate(currentDate);
+        dateSendElement.textContent = `Ngày lập đơn hàng: ${formattedDate}`;
+    }
+
+    function formatDate(date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Tháng bắt đầu từ 0
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
 });

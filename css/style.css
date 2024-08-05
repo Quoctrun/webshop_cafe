@@ -337,7 +337,35 @@ sub {
     background-color: #e64a19;
 }
 
+/*ICON-User*/
+.sub2-menu {
+    visibility: hidden;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color:#a5a2a2;
+    z-index: 1000;
+    transition: 0.3s;
+    padding: 5px 20px 5px 0;
+    border-radius: 10px;
+}
 
+.sub2-menu li {
+    width: 100%;
+}
+
+.sub2-menu li a {
+    font-size: 1.5rem;
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#icon-group ul li:hover .sub2-menu {
+    visibility: visible;
+    top: 40px;
+}
 /*--HEADER Setting media--*/
 @media (min-width: 1600px) {
     .search-container {
@@ -687,6 +715,170 @@ sub {
     padding-left: 20px;
 }
 
+.contain-us-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    background-color: #f0e8e8;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tt-dre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tt-dre h1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #333;
+    font-size: 36px;
+}
+
+.ct-ctan-us {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.box-ct-dr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #deb887;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.address, .contain-us {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all-contain-us {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.address .bxs-map {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.in-ct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.address iframe {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.address hr {
+    width: 65%;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
+.from-contain {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.from-contain h2 {
+    font-size: 3vw;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.creat {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 100%;
+    background-color: black;
+    box-shadow: rgb(69, 74, 77);
+    color: white;
+    text-transform: uppercase;
+    height: 2.5rem;
+    min-width: 8.75rem;
+}
+
+.input-name-ct, .ip-ct-dr, .ip-notes-ct {
+    width: 100%;
+}
+
+.name-ipct, .tt-ipct-dr, .tt-ct-notes {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+.input-id {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.input-id:focus {
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea.input-id {
+    height: 110px;
+    resize: vertical;
+}
+
+.tt-dre .bxs-book-content {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.image-ct >img {
+    border-radius: 20px;
+    width: 100%;
+    height: 260px;
+    margin-top: 15px;
+}
+
+.in-ct  a, .in-ct i {
+    color: black;
+    font-size: 2rem;
+    padding: 0 20px;
+}
+
+.in-ct a:hover, .in-ct i:hover {
+    color:#666;
+}
 /*Main--Media--*/
 @media (max-width: 1140px) {
     .containt-last {
@@ -708,6 +900,11 @@ sub {
         max-width: none;
         padding-left: 0px;
     }
+
+    .ct-ctan-us {
+        flex-direction: column;
+        width: 95%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -720,6 +917,80 @@ sub {
     .img-mm-first {
         width: 100%;
         max-width: none;
+    }
+
+    .ct-ctan-us {
+        width: 98%;
+    }
+}
+
+@media (max-width: 520px) {
+    .contain-us-all {
+        padding: 10px;
+    }
+
+    .box-ct-dr {
+        padding: 10px;
+    }
+
+    .address .bxs-map {
+        font-size: 6vw;
+        margin-bottom: 5px;
+    }
+
+    .tt-dre h1 {
+        font-size: 5vw;
+    }
+
+    .address iframe {
+        height: 250px;
+    }
+
+    .address hr {
+        margin: 8px 0;
+    }
+
+    .tt-dre .bxs-book-content {
+        font-size: 6vw;
+        margin-bottom: 5px;
+    }
+
+    .image-ct >img {
+        height: auto;
+    }
+
+    .in-ct {
+        padding: 5px;
+        font-size: 4vw;
+    }
+
+    .in-ct a, .in-ct i {
+        font-size: 6vw;
+        padding: 0 5px;
+    }
+
+    .from-contain {
+        border-radius: 10px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .name-ipct, .tt-ipct-dr, .tt-ct-notes {
+        margin-bottom: 5px;
+        font-size: 4vw;
+    }
+
+    .input-id {
+        padding: 7px;
+        font-size: 4vw;
+    }
+
+    textarea.input-id {
+        height: 80px;
+    }
+
+    .creat {
+        height: 1.75rem;
     }
 }
 
