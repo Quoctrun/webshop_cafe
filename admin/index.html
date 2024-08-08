@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="icon" type="image" href="../img/logo-tap.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="manage-products.html">Manage Products</a></li>
+                <li><a href="manage-orders.html">Manage Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div style="background-color: antiquewhite;">
+        <h2>Phân phối bán Sản Phẩm</h2>
+
+        <div style="display: flex; align-items: center; gap: 50px;">
+            <canvas id="productDistributionChart" width="400" height="400"></canvas>
+            <div id="legend"></div>
+        </div>
+    </div>
+
+    <div>
+        <h2>Doanh thu hang Quý</h2>
+
+        <canvas id="revenueChart" width="800" height="400"></canvas>
+        <select id="monthSelector"></select>
+    </div>
+    </main>
+    <script src="js/admin.js"></script>
+    <script src="js/analyst.js"></script>
+</body>
+</html>

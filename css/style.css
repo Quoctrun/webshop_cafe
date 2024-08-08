@@ -78,6 +78,7 @@ li {
     background-color: black;
     z-index: 1000;
     transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .sub-menu li {
@@ -222,12 +223,15 @@ li {
     background-color: #555;
 }
 
-#icon-group ul li > a {
+#icon-group ul li a {
     color: white;
     background-color: black;
-    border-radius: 5px;
     padding: 10px;
     z-index: 1000;
+}
+
+#icon-group >ul >li > a {
+    border-radius: 5px;
 }
 
 #icon-group ul li > a:hover {
@@ -337,17 +341,17 @@ sub {
     background-color: #e64a19;
 }
 
-/*ICON-User*/
+/* ICON-User */
 .sub2-menu {
     visibility: hidden;
     position: absolute;
     top: 70px;
     right: 30px;
-    background-color:#a5a2a2;
+    background-color: black;
     z-index: 1000;
     transition: 0.3s;
-    padding: 5px 20px 5px 0;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .sub2-menu li {
@@ -360,9 +364,56 @@ sub {
     padding: 10px;
     color: white;
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#icon-group ul li:hover .sub2-menu {
+.sub2-menu li a:hover {
+    background-color: #555;
+    color: antiquewhite;
+}
+
+.sub3-menu {
+    visibility: hidden;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: black;
+    z-index: 1000;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.sub3-menu li a, .sub3-menu li button {
+    width: 200px;
+    font-size: 1.5rem;
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sub3-menu li button {
+    background-color: #f76c6c;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 10px;
+}
+
+.sub3-menu li button:hover {
+    background-color: #ff4747;
+    transform: scale(1.05); 
+}
+
+.sub3-menu li a:hover{
+    background-color: #555;
+    color: antiquewhite;
+}
+
+#icon-group ul li:hover .activesup {
     visibility: visible;
     top: 40px;
 }
@@ -554,6 +605,17 @@ sub {
         left: 2px;
         right: auto;
         width: 298px;
+    } 
+    .sub2-menu {
+        background-color:#333;
+        left: 50px;
+        width: 200px;
+    }
+
+    .sub3-menu {
+        background-color:#333;
+        left: 50px;
+        width: 200px;
     }
 }
 

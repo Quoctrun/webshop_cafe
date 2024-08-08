@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Orders</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Manage Orders</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="manage-products.html">Manage Products</a></li>
+                <li><a href="manage-orders.html">Manage Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Order List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Quantity</th>
+                    <th>Customer</th>
+                    <th>Order Date</th>
+                    <th>Total Money</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <!-- Orders will be dynamically added here -->
+            </tbody>
+        </table>
+    </main>
+    <script src="js/admin.js"></script>
+</body>
+</html>

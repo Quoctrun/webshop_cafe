@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const nav = document.getElementById('navbar');
     const icon = document.getElementById('icon-group');
     const noice = document.querySelector('.noice');
+    const sub3Menu = document.querySelector('.sub3-menu');
     const allicon = document.getElementById('bx');
     const notifications = document.querySelector('.envelope-items');
     const checkReadButton = document.querySelector('.checkread-button');
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             { id: 2, title: 'Bảo trì hệ thống webshop', content: 'Chúng tôi thông báo rằng hệ thống webshop của chúng tôi sẽ được bảo trì từ ngày 27/07/2024 đến ngày 28/07/2024. Trong thời gian này, trang web có thể không hoạt động ổn định. Chúng tôi xin lỗi vì sự bất tiện này và cảm ơn sự thông cảm của bạn!', read: false, date: '2024-07-25' },
             { id: 3, title: 'Sản phẩm mới "Boozy Whipped Coffee"', content: 'Chúng tôi rất vui được giới thiệu sản phẩm mới của chúng tôi – "Boozy Whipped Coffee"! Đây là một loại cà phê đặc biệt với hương vị độc đáo, kết hợp giữa cà phê espresso đậm đà và lớp kem whipped nhẹ nhàng, hoàn hảo cho những ai yêu thích sự mới lạ và sáng tạo trong thức uống của mình. Hãy đến thử ngay hôm nay!', read: false, date: '2024-07-26' }
         ];
-
+    
     function updateCartDisplay() {
         const cartElement = document.querySelector('.cart-item');
         cartElement.innerHTML = '';
@@ -285,4 +286,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const year = date.getFullYear();
         return `${day}/${month}/${year}`;
     }
+
+    document.getElementById('logout').addEventListener('click', () => {
+        //all active
+    });
 });

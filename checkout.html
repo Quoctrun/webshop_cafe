@@ -110,6 +110,21 @@
                     </div>
                 </fieldset>
             </div>
+            <div class="payment-method">
+                <fieldset style="padding: 10px 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <legend style="margin: 0 20px;">
+                        <b>Phương thức thanh toán:*</b>
+                    </legend>
+                    <div>
+                        <input type="radio" id="standard-pm" name="payment" value="standard-pm">
+                        <label for="standard-pm">Thanh toán trực tiếp</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="express-pm" name="payment" value="express-pm" disabled>
+                        <label for="express-pm" style="color:#a5a2a2;">Thanh toán trực tuyến</label>
+                    </div>
+                </fieldset>
+            </div>
             <div class="sale-method" style="gap: 10px; display: flex; flex-direction: column;">
                 <b>Mã khuyến mãi:</b>
                 <div>
